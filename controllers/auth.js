@@ -6,6 +6,8 @@ import jwt from "jsonwebtoken"
 
 
 export const register = async (req, res,next) => {
+
+  console.log("sdfdsg")
   try {
       //TODO Overview Register
       // 1 Check body 
@@ -23,7 +25,7 @@ export const register = async (req, res,next) => {
   //Step 2 Check Email in DB
   const user = await prisma.user.findFirst({
     where:{
-
+        email:email,
     },
   })
   console.log(user)
